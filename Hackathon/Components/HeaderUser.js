@@ -1,5 +1,6 @@
 import { Text, View, StyleSheet, Image } from "react-native";
 import { useFonts } from "expo-font";
+import Icon from "react-native-vector-icons/Feather";
 
 export function HeaderUser() {
   const [fontsLoaded] = useFonts({
@@ -35,28 +36,9 @@ export function HeaderUser() {
             <Text style={{ marginLeft: 20, color: "#b5b5b5" }}>Luuk</Text>
           </View>
         </View>
-        <View
-          style={{
-            flex: 1,
-            justifyContent: "center",
-            alignItems: "center",
-            marginTop: 30,
-            marginRight: -60,
-          }}
-        >
-          <Text
-            style={{
-              textAlign: "center",
-              color: "white",
-              fontSize: 30,
-              paddingLeft: 5,
-              fontFamily: "SuperMario",
-            }}
-          >
-            {" "}
-            <Image source={require("../assets/coin.png")} />
-            10
-          </Text>
+        <View style={styles.iconContainer}>
+          <Icon name="search" size={20} color="white" style={styles.icon} />
+          <Icon name="settings" size={20} color="white" style={styles.icon} />
         </View>
       </View>
     </View>
@@ -68,5 +50,15 @@ const styles = StyleSheet.create({
     backgroundColor: "#971EFD",
     height: 150,
     opacity: 0.8,
+  },
+  iconContainer: {
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
+    marginTop: 30,
+    marginRight: 10,
+  },
+  icon: {
+    marginHorizontal: 10,
   },
 });
