@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
-import { NavigationContainer, DefaultTheme } from "@react-navigation/native";
+import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Home from "./Screens/Home";
 import History from "./Screens/History";
@@ -27,6 +27,7 @@ const Navigation = () => {
           tabBarActiveTintColor: "black",
           tabBarInactiveTintColor: "white",
           tabBarStyle: styles.NavContainer,
+          headerShown: false,
         }}
       >
         <Tab.Screen
@@ -103,5 +104,12 @@ const styles = StyleSheet.create({
   NavContainer: {
     backgroundColor: "#971EFD",
     height: 100,
+    shadowColor: "rgba(0, 0, 0, 0.1)",
+    shadowOffset: { width: 0, height: 4 },
+    shadowRadius: 30,
+    shadowOpacity: 1,
+    elevation: 4,
+    backdropFilter: "blur(6.2px)",
+    opacity: 0.8,
   },
 });
