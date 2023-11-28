@@ -9,7 +9,10 @@ import Icon from "react-native-vector-icons/Feather";
 import Shopping from "./Screens/Shopping";
 import Photo from "./Screens/Photo";
 import User from "./Screens/User";
-import ShoppingInfo from "./Screens/ShoppingInfo";
+import HistoryObject from "./Screens/HistoryObject";
+import HistoryObject2 from "./Screens/HistoryObject2";
+import HistoryObject3 from "./Screens/HistoryObject3";
+import HistoryObject4 from "./Screens/HistoryObject4";
 
 const NavTheme = {
   dark: false,
@@ -104,7 +107,34 @@ const Navigation = () => {
               ),
             }}
           />
-          <Tab.Screen name="ShoppingInfo" component={ShoppingInfo} />
+          <Tab.Screen
+            name="HistoryObject"
+            component={HistoryObject}
+            options={{
+              tabBarButton: () => null,
+            }}
+          />
+          <Tab.Screen
+            name="HistoryObject2"
+            component={HistoryObject2}
+            options={{
+              tabBarButton: () => null,
+            }}
+          />
+          <Tab.Screen
+            name="HistoryObject3"
+            component={HistoryObject3}
+            options={{
+              tabBarButton: () => null,
+            }}
+          />
+          <Tab.Screen
+            name="HistoryObject4"
+            component={HistoryObject4}
+            options={{
+              tabBarButton: () => null,
+            }}
+          />
         </Tab.Navigator>
       </NavigationContainer>
     </>

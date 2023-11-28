@@ -9,15 +9,15 @@ const Shopping = () => {
       <HeaderShopping />
       <ScrollView>
         <ShoppingCard
-          title="Museum"
+          title="Museum Cadeaubon"
           imageUrl="../assets/shop.jpg"
-          subtitle="sss"
-          rating={4}
+          subtitle="t.w.v € 25,-"
+          rating={5}
         />
         <ShoppingCard
-          title="33"
+          title="Biscoop Cadeaubon"
           imageUrl="../assets/shop.jpg"
-          subtitle="test"
+          subtitle="t.w.v € 10,-"
           rating={4}
         />
       </ScrollView>

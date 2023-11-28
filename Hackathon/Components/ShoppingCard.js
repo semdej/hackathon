@@ -5,8 +5,13 @@ import Icon from "react-native-vector-icons/Feather";
 import StarRating from "react-native-star-rating";
 
 export function ShoppingCard({ title, subtitle, rating, imageUrl }) {
+  const navigation = useNavigation();
+
+  const handlePress = () => {
+    navigation.navigate("ShoppingInfo");
+  };
   return (
-    <TouchableOpacity>
+    <TouchableOpacity onPress={handlePress}>
       <View style={styles.container}>
         <View style={styles.imageContainer}>
           <Image source={imageUrl} style={styles.image} />
@@ -22,7 +27,7 @@ export function ShoppingCard({ title, subtitle, rating, imageUrl }) {
                 maxStars={5}
                 rating={rating}
                 starSize={23}
-                starStyle={{ color: "#971EFD", padding: 2 }}
+                fullStarColor="#971EFD"
               />
             </View>
           </View>
