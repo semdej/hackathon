@@ -3,7 +3,7 @@ import { useFonts } from "expo-font";
 import Icon from "react-native-vector-icons/Feather";
 import { useNavigation } from "@react-navigation/native";
 
-export function HeaderHistoryInfo() {
+export function HeaderHistoryInfo4() {
   const navigation = useNavigation();
 
   const [fontsLoaded] = useFonts({
@@ -22,7 +22,7 @@ export function HeaderHistoryInfo() {
           paddingTop: 10,
         }}
       >
-        <Image source={require("../assets/fikkie.png")} style={styles.img} />
+        <Image source={require("../assets/lodwijk.png")} style={styles.img} />
         <View style={{ flex: 1 }}>
           <Text
             style={{
@@ -33,13 +33,13 @@ export function HeaderHistoryInfo() {
               marginTop: 10,
             }}
           >
-            Fikkie
+            Lodewijk Pincoffs
           </Text>
           <Text style={{ marginLeft: 20, color: "#b5b5b5" }}>Statue</Text>
         </View>
         <View style={styles.iconContainer}>
           <Icon
-            onPress={() => navigation.navigate("HistoryObject")}
+            onPress={() => navigation.navigate("HistoryObject4")}
             name="arrow-right"
             size={20}
             color="white"

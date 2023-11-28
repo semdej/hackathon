@@ -1,6 +1,6 @@
 import { WebView } from "react-native-webview";
 import React from "react";
-import { HeaderUser } from "../../Components/HeaderUser";
+import { HeaderHistoryInfo } from "../../Components/HeaderHistoryInfo";
 import {
   View,
   Text,
@@ -27,7 +27,7 @@ const HistoryObject = () => {
 
   return (
     <>
-      <HeaderUser />
+      <HeaderHistoryInfo />
       <View style={styles.container}>
         {/* WebView */}
         <WebView
@@ -43,14 +43,13 @@ const HistoryObject = () => {
           <View style={styles.gridContainer}>
             <Text style={styles.title}>Fikkie</Text>
             <Text style={styles.description}>
-              DescriptionDescriptionDescriptionDescriptionDescription
+              "Fikkie" in Rotterdam is een levendig beeld van een hond die zijn
+              baasje begroet. Het vangt de vreugde en loyaliteit van menselijke
             </Text>
             <Text style={styles.description}>
-              DescriptionDescriptionDescriptionDescription
+              verbondenheid met onze trouwe viervoeters in de stad.
             </Text>
-            <Text style={styles.description}>
-              DescriptionDescriptionDescriptionDescriptionDescription
-            </Text>
+            <Text style={styles.description}> </Text>
             {/* RATING STARS */}
             <View style={styles.ratingContainer}>
               <Text style={styles.rating}>
@@ -99,8 +98,9 @@ const styles = StyleSheet.create({
     bottom: 0,
     left: 0,
     right: 0,
-    backgroundColor: "transparent", // Make the overlay container transparent
     padding: 10,
+    backgroundColor: "white",
+    opacity: 0.6,
   },
   gridContainer: {
     backgroundColor: "transparent", // Transparent background for the grid
@@ -136,7 +136,7 @@ const styles = StyleSheet.create({
     position: "absolute",
     top: 10, // Adjust the top position as needed
     right: 10, // Adjust the right position as needed
-    backgroundColor: "#2196F3", // Blue color for the Open AR View button
+    backgroundColor: "#000", // Blue color for the Open AR View button
     borderRadius: 50,
     padding: 10,
     flexDirection: "row",

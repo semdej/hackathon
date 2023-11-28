@@ -14,6 +14,9 @@ import HistoryObject2 from "./Screens/HistoryObject2";
 import HistoryObject3 from "./Screens/HistoryObject3";
 import HistoryObject4 from "./Screens/HistoryObject4";
 import HistoryInfo from "./Screens/HistoryInfo";
+import HistoryInfo2 from "./Screens/HistoryInfo2";
+import HistoryInfo3 from "./Screens/HistoryInfo3";
+import HistoryInfo4 from "./Screens/HistoryInfo4";
 
 const NavTheme = {
   dark: false,
@@ -139,6 +142,27 @@ const Navigation = () => {
           <Tab.Screen
             name="HistoryInfo"
             component={HistoryInfo}
+            options={{
+              tabBarButton: () => null,
+            }}
+          />
+          <Tab.Screen
+            name="HistoryInfo2"
+            component={HistoryInfo2}
+            options={{
+              tabBarButton: () => null,
+            }}
+          />
+          <Tab.Screen
+            name="HistoryInfo3"
+            component={HistoryInfo3}
+            options={{
+              tabBarButton: () => null,
+            }}
+          />
+          <Tab.Screen
+            name="HistoryInfo4"
+            component={HistoryInfo4}
             options={{
               tabBarButton: () => null,
             }}

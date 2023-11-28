@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Button, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { Camera } from "expo-camera";
+import Icon from "react-native-vector-icons/Feather";
 
 const Photo = () => {
   const [hasPermission, setHasPermission] = useState(null);
@@ -52,13 +53,19 @@ const Photo = () => {
             style={styles.flipButton}
             onPress={toggleCameraType}
           >
-            <Text style={styles.flipText}>Flip</Text>
+            <Text style={styles.flipText}>
+              {" "}
+              <Icon name="repeat" size={25} color="white" />
+            </Text>
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.takePictureButton}
             onPress={takePicture}
           >
-            <Text style={styles.takePictureText}>Take Picture</Text>
+            <Text style={styles.takePictureText}>
+              {" "}
+              <Icon name="camera" size={25} color="white" />
+            </Text>
           </TouchableOpacity>
         </View>
       </Camera>
