@@ -14,6 +14,7 @@ const NavTheme = {
   dark: false,
   colors: {
     card: "rgb(153, 30, 253)",
+    background: "#111111",
   },
 };
 

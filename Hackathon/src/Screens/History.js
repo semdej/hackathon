@@ -1,12 +1,29 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, ScrollView } from "react-native";
 import React from "react";
 import { HeaderHistory } from "../../Components/HeaderHistory";
+import { HistoryCard } from "../../Components/HistoryCard";
 
 const History = () => {
   return (
     <View>
       <HeaderHistory />
-      <Text>History</Text>
+      <ScrollView>
+        <HistoryCard />
+        <HistoryCard />
+        <HistoryCard />
+        <HistoryCard />
+        <HistoryCard />
+        <HistoryCard />
+        <HistoryCard />
+        <HistoryCard />
+        <HistoryCard />
+        <HistoryCard />
+        <HistoryCard />
+        <HistoryCard />
+        <HistoryCard />
+        <HistoryCard />
+        <HistoryCard />
+      </ScrollView>
     </View>
   );
 };
