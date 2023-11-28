@@ -1,34 +1,38 @@
-import { Text, View, StyleSheet, Image } from "react-native";
+import React from "react";
+import { Text, View, StyleSheet, Image, TouchableOpacity } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 import Icon from "react-native-vector-icons/Feather";
 import StarRating from "react-native-star-rating";
 
 export function ShoppingCard({ title, subtitle, rating, imageUrl }) {
   return (
-    <View style={styles.container}>
-      <View style={styles.imageContainer}>
-        <Image source={imageUrl} style={styles.image} />
-      </View>
+    <TouchableOpacity>
+      <View style={styles.container}>
+        <View style={styles.imageContainer}>
+          <Image source={imageUrl} style={styles.image} />
+        </View>
 
-      <View style={styles.contentContainer}>
-        <View style={styles.leftContainer}>
-          <Text style={styles.boldText}>{title}</Text>
-          <Text style={styles.text}>{subtitle}</Text>
-          <View style={styles.starsContainer}>
-            <StarRating
-              disabled={false}
-              maxStars={5}
-              rating={rating}
-              starSize={23}
-              starStyle={{ color: "#971EFD", padding: 2 }}
-            />
+        <View style={styles.contentContainer}>
+          <View style={styles.leftContainer}>
+            <Text style={styles.boldText}>{title}</Text>
+            <Text style={styles.text}>{subtitle}</Text>
+            <View style={styles.starsContainer}>
+              <StarRating
+                disabled={false}
+                maxStars={5}
+                rating={rating}
+                starSize={23}
+                starStyle={{ color: "#971EFD", padding: 2 }}
+              />
+            </View>
+          </View>
+
+          <View style={styles.rightContainer}>
+            <Icon name="arrow-right" size={25} color="white" />
           </View>
         </View>
-
-        <View style={styles.rightContainer}>
-          <Icon name="arrow-right" size={25} color="white" />
-        </View>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 }
 
@@ -40,28 +44,27 @@ const styles = StyleSheet.create({
     opacity: 0.8,
     marginLeft: 23,
     marginRight: 23,
-    marginTop: 30, // Adjusted marginTop for reduced space above the card
+    marginTop: 30,
     borderRadius: 13,
   },
-
   imageContainer: {
     borderTopLeftRadius: 13,
     borderTopRightRadius: 13,
-    overflow: "hidden", // Clip content that overflows the borderRadius
+    overflow: "hidden",
   },
   image: {
     width: "100%",
-    height: 140, // Adjusted height for better visibility
+    height: 140,
   },
   contentContainer: {
     flexDirection: "row",
     flex: 1,
-    padding: 15, // Increased padding for better spacing
+    padding: 15,
   },
   leftContainer: {
     flex: 2,
-    justifyContent: "flex-start", // Align text to the top
-    alignItems: "flex-start", // Align text to the left
+    justifyContent: "flex-start",
+    alignItems: "flex-start",
   },
   rightContainer: {
     flex: 1,
@@ -70,9 +73,9 @@ const styles = StyleSheet.create({
     paddingRight: 10,
   },
   starsContainer: {
-    justifyContent: "center", // Center stars vertically
-    alignItems: "flex-start", // Align stars to the left
-    marginVertical: 5, // Adjusted margin for better spacing
+    justifyContent: "center",
+    alignItems: "flex-start",
+    marginVertical: 5,
   },
   boldText: {
     fontWeight: "bold",

@@ -9,6 +9,7 @@ import Icon from "react-native-vector-icons/Feather";
 import Shopping from "./Screens/Shopping";
 import Photo from "./Screens/Photo";
 import User from "./Screens/User";
+import ShoppingInfo from "./Screens/ShoppingInfo";
 
 const NavTheme = {
   dark: false,
@@ -19,80 +20,94 @@ const NavTheme = {
 };
 
 const Tab = createBottomTabNavigator();
+
 const Navigation = () => {
   return (
-    <NavigationContainer theme={NavTheme}>
-      <Tab.Navigator
-        screenOptions={{
-          tabBarShowLabel: false,
-          tabBarActiveTintColor: "black",
-          tabBarInactiveTintColor: "white",
-          tabBarStyle: styles.NavContainer,
-          headerShown: false,
-        }}
-      >
-        <Tab.Screen
-          name="Home"
-          component={Home}
-          options={{
-            tabBarIcon: ({ color, size }) => (
-              <Icon style={styles.Icon} name="home" size={size} color={color} />
-            ),
+    <>
+      <NavigationContainer theme={NavTheme}>
+        <Tab.Navigator
+          screenOptions={{
+            tabBarShowLabel: false,
+            tabBarActiveTintColor: "black",
+            tabBarInactiveTintColor: "white",
+            tabBarStyle: styles.NavContainer,
+            headerShown: false,
           }}
-        />
-        <Tab.Screen
-          name="History"
-          component={History}
-          options={{
-            tabBarIcon: ({ color, size }) => (
-              <Icon
-                style={styles.Icon}
-                name="book-open"
-                size={size}
-                color={color}
-              />
-            ),
-          }}
-        />
-        <Tab.Screen
-          name="Photo"
-          component={Photo}
-          options={{
-            tabBarIcon: ({ color, size }) => (
-              <Icon
-                style={styles.Icon}
-                name="camera"
-                size={size}
-                color={color}
-              />
-            ),
-          }}
-        />
-        <Tab.Screen
-          name="Shopping"
-          component={Shopping}
-          options={{
-            tabBarIcon: ({ color, size }) => (
-              <Icon
-                style={styles.Icon}
-                name="shopping-cart"
-                size={size}
-                color={color}
-              />
-            ),
-          }}
-        />
-        <Tab.Screen
-          name="User"
-          component={User}
-          options={{
-            tabBarIcon: ({ color, size }) => (
-              <Icon style={styles.Icon} name="user" size={size} color={color} />
-            ),
-          }}
-        />
-      </Tab.Navigator>
-    </NavigationContainer>
+        >
+          <Tab.Screen
+            name="Home"
+            component={Home}
+            options={{
+              tabBarIcon: ({ color, size }) => (
+                <Icon
+                  style={styles.Icon}
+                  name="home"
+                  size={size}
+                  color={color}
+                />
+              ),
+            }}
+          />
+          <Tab.Screen
+            name="History"
+            component={History}
+            options={{
+              tabBarIcon: ({ color, size }) => (
+                <Icon
+                  style={styles.Icon}
+                  name="book-open"
+                  size={size}
+                  color={color}
+                />
+              ),
+            }}
+          />
+          <Tab.Screen
+            name="Photo"
+            component={Photo}
+            options={{
+              tabBarIcon: ({ color, size }) => (
+                <Icon
+                  style={styles.Icon}
+                  name="camera"
+                  size={size}
+                  color={color}
+                />
+              ),
+            }}
+          />
+          <Tab.Screen
+            name="Shopping"
+            component={Shopping}
+            options={{
+              tabBarIcon: ({ color, size }) => (
+                <Icon
+                  style={styles.Icon}
+                  name="shopping-cart"
+                  size={size}
+                  color={color}
+                />
+              ),
+            }}
+          />
+          <Tab.Screen
+            name="User"
+            component={User}
+            options={{
+              tabBarIcon: ({ color, size }) => (
+                <Icon
+                  style={styles.Icon}
+                  name="user"
+                  size={size}
+                  color={color}
+                />
+              ),
+            }}
+          />
+          <Tab.Screen name="ShoppingInfo" component={ShoppingInfo} />
+        </Tab.Navigator>
+      </NavigationContainer>
+    </>
   );
 };
 
