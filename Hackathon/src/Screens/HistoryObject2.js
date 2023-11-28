@@ -1,11 +1,22 @@
 import { WebView } from "react-native-webview";
 import React from "react";
 import { HeaderUser } from "../../Components/HeaderUser";
-import { View, Text, Button, StyleSheet } from "react-native";
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  StyleSheet,
+  Linking,
+} from "react-native";
 import StarRating from "react-native-star-rating";
 import Icon from "react-native-vector-icons/Feather";
 
 const HistoryObject2 = () => {
+  const openARView = () => {
+    Linking.openURL(
+      "https://360fabriek.nl/usdzfiles/GemRDam/De_VerwoesteStad.usdz"
+    );
+  };
   return (
     <>
       <HeaderUser />
@@ -52,6 +63,13 @@ const HistoryObject2 = () => {
             </View>
           </View>
         </View>
+        <TouchableOpacity
+          onPress={openARView}
+          style={styles.openARViewContainer}
+        >
+          <Text style={styles.openARViewText}>Open AR View</Text>
+          <Icon name="external-link" size={20} color="white" />
+        </TouchableOpacity>
       </View>
     </>
   );
@@ -69,7 +87,7 @@ const styles = StyleSheet.create({
     bottom: 0,
     left: 0,
     right: 0,
-    backgroundColor: "rgba(255, 255, 255, 0.6)", // Transparent white background
+    backgroundColor: "transparent", // Make the overlay container transparent
     padding: 10,
   },
   gridContainer: {
@@ -99,6 +117,20 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   leesMeerText: {
+    color: "white",
+    paddingRight: 5,
+  },
+  openARViewContainer: {
+    position: "absolute",
+    top: 10, // Adjust the top position as needed
+    right: 10, // Adjust the right position as needed
+    backgroundColor: "#2196F3", // Blue color for the Open AR View button
+    borderRadius: 50,
+    padding: 10,
+    flexDirection: "row",
+    alignItems: "center",
+  },
+  openARViewText: {
     color: "white",
     paddingRight: 5,
   },

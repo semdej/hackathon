@@ -1,11 +1,30 @@
 import { WebView } from "react-native-webview";
 import React from "react";
 import { HeaderUser } from "../../Components/HeaderUser";
-import { View, Text, Button, StyleSheet } from "react-native";
+import {
+  View,
+  Text,
+  Button,
+  StyleSheet,
+  TouchableOpacity,
+  Linking,
+} from "react-native";
 import StarRating from "react-native-star-rating";
+import { useNavigation } from "@react-navigation/native";
+
 import Icon from "react-native-vector-icons/Feather";
 
 const HistoryObject = () => {
+  const navigation = useNavigation();
+
+  const handlePress = () => {
+    navigation.navigate("HistoryInfo");
+  };
+
+  const openARView = () => {
+    Linking.openURL("https://360fabriek.nl/usdzfiles/GemRDam/Fikkie.usdz"); // Replace "https://example.com" with your desired AR view URL
+  };
+
   return (
     <>
       <HeaderUser />
@@ -45,13 +64,24 @@ const HistoryObject = () => {
                 />
               </Text>
               {/* Lees meer arrow right icon button */}
-              <View style={styles.leesMeerContainer}>
+              <TouchableOpacity
+                onPress={handlePress}
+                style={styles.leesMeerContainer}
+              >
                 <Text style={styles.leesMeerText}>Lees meer</Text>
                 <Icon name="arrow-right" size={20} color="white" />
-              </View>
+              </TouchableOpacity>
             </View>
           </View>
         </View>
+        {/* Open AR View button */}
+        <TouchableOpacity
+          onPress={openARView}
+          style={styles.openARViewContainer}
+        >
+          <Text style={styles.openARViewText}>Open AR View</Text>
+          <Icon name="external-link" size={20} color="white" />
+        </TouchableOpacity>
       </View>
     </>
   );
@@ -69,7 +99,7 @@ const styles = StyleSheet.create({
     bottom: 0,
     left: 0,
     right: 0,
-    backgroundColor: "rgba(255, 255, 255, 0.6)", // Transparent white background
+    backgroundColor: "transparent", // Make the overlay container transparent
     padding: 10,
   },
   gridContainer: {
@@ -99,6 +129,20 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   leesMeerText: {
+    color: "white",
+    paddingRight: 5,
+  },
+  openARViewContainer: {
+    position: "absolute",
+    top: 10, // Adjust the top position as needed
+    right: 10, // Adjust the right position as needed
+    backgroundColor: "#2196F3", // Blue color for the Open AR View button
+    borderRadius: 50,
+    padding: 10,
+    flexDirection: "row",
+    alignItems: "center",
+  },
+  openARViewText: {
     color: "white",
     paddingRight: 5,
   },
