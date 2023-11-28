@@ -1,12 +1,12 @@
 import React, { useState, useRef, useEffect } from "react";
-import { StyleSheet, Text, View, TouchableOpacity, Image } from "react-native";
+import { StyleSheet, View, Image, TouchableOpacity } from "react-native";
 import { Header } from "../../Components/Header";
 import { useNavigation } from "@react-navigation/native";
 import MapView, { PROVIDER_GOOGLE, Marker } from "react-native-maps";
+import { supabase } from "../../Components/Supabase";
 
 const Home = () => {
   const navigation = useNavigation();
-
   const [region, setRegion] = useState({
     latitude: 51.924419,
     longitude: 4.477733,
@@ -14,85 +14,56 @@ const Home = () => {
     longitudeDelta: 0.04,
   });
 
+  const [markers, setMarkers] = useState([]);
   const mapRef = useRef(null);
 
-  const handlePress = () => {
-    navigation.navigate("HistoryObject");
-  };
+  useEffect(() => {
+    const fetchMarkers = async () => {
+      try {
+        const { data, error } = await supabase.from("buildings").select("*");
 
-  const handlePress2 = () => {
-    navigation.navigate("HistoryObject2");
-  };
+        if (error) {
+          console.error("Error fetching markers:", error);
+          return;
+        }
 
-  const handlePress3 = () => {
-    navigation.navigate("HistoryObject3");
-  };
+        setMarkers(data);
+      } catch (error) {
+        console.error("Error fetching markers:", error.message);
+      }
+    };
 
-  const handlePress4 = () => {
-    navigation.navigate("HistoryObject4");
+    fetchMarkers();
+  }, []);
+
+  const handleMarkerPress = (marker) => {
+    navigation.navigate("HistoryObject", { marker });
   };
 
   return (
     <View style={styles.container}>
       <Header />
-
       <MapView
         ref={mapRef}
         provider={PROVIDER_GOOGLE}
         initialRegion={region}
         style={styles.map}
       >
-        <Marker
-          coordinate={{
-            latitude: 51.91802668702963,
-            longitude: 4.4771170600938115,
-          }}
-          onPress={handlePress}
-        >
-          <Image
-            source={require("../../assets/fikkie.png")}
-            style={{ width: 45, height: 45 }}
-          />
-        </Marker>
-
-        <Marker
-          coordinate={{
-            latitude: 51.91769871607547,
-            longitude: 4.483152977853577,
-          }}
-          onPress={handlePress2}
-        >
-          <Image
-            source={require("../../assets/verwoestestad.png")}
-            style={{ width: 45, height: 45 }}
-          />
-        </Marker>
-
-        <Marker
-          coordinate={{
-            latitude: 51.91781441782521,
-            longitude: 4.472232577522801,
-          }}
-          onPress={handlePress3}
-        >
-          <Image
-            source={require("../../assets/afscheid.png")}
-            style={{ width: 45, height: 45 }}
-          />
-        </Marker>
-
-        <Marker
-          coordinate={{
-            latitude: 51.91052551736048,
-            longitude: 4.497870726309459,
-          }}
-          onPress={handlePress4}
-        >
-          <Image
-            source={require("../../assets/lodwijk.png")}
-            style={{ width: 40, height: 40 }}
-          />
-        </Marker>
+        {markers.map((marker, index) => (
+          <Marker
+            key={index}
+            coordinate={{
+              latitude: marker.latitude,
+              longitude: marker.longitude,
+            }}
+            onPress={() => handleMarkerPress(marker)}
+          >
+            <Image
+              source={{ uri: marker.picture }}
+              style={{ width: 45, height: 45 }}
+            />
+          </Marker>
+        ))}
       </MapView>
     </View>
   );

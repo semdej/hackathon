@@ -14,25 +14,31 @@ import { useNavigation } from "@react-navigation/native";
 
 import Icon from "react-native-vector-icons/Feather";
 
-const HistoryObject = () => {
+const HistoryObject = ({ route }) => {
+  const { marker } = route.params;
+
   const navigation = useNavigation();
 
   const handlePress = () => {
-    navigation.navigate("HistoryInfo");
+    navigation.navigate("HistoryInfo", { marker });
   };
 
   const openARView = () => {
-    Linking.openURL("https://360fabriek.nl/usdzfiles/GemRDam/Fikkie.usdz"); // Replace "https://example.com" with your desired AR view URL
+    Linking.openURL(marker.arviewuri); // Replace "https://example.com" with your desired AR view URL
   };
 
   return (
     <>
-      <HeaderHistoryInfo />
+      <HeaderHistoryInfo
+        picture={marker.picture}
+        title={marker.name}
+        description="Statue"
+      />
       <View style={styles.container}>
         {/* WebView */}
         <WebView
           source={{
-            uri: "https://sketchfab.com/models/6e494dd768774b60ae963ddf135a9f8f/embed?camera=0&transparent=1&ui_animations=0&ui_infos=0&ui_stop=0&ui_inspector=0&ui_watermark_link=0&ui_watermark=0&ui_ar=0&ui_help=0&ui_settings=0&ui_vr=0&ui_fullscreen=0&ui_annotations=0",
+            uri: marker.uri,
           }}
           style={styles.webview}
           forceDarkOn={true}
@@ -41,14 +47,8 @@ const HistoryObject = () => {
         <View style={styles.overlayContainer}>
           {/* Grid */}
           <View style={styles.gridContainer}>
-            <Text style={styles.title}>Fikkie</Text>
-            <Text style={styles.description}>
-              "Fikkie" in Rotterdam is een levendig beeld van een hond die zijn
-              baasje begroet. Het vangt de vreugde en loyaliteit van menselijke
-            </Text>
-            <Text style={styles.description}>
-              verbondenheid met onze trouwe viervoeters in de stad.
-            </Text>
+            <Text style={styles.title}>{marker.name}</Text>
+            <Text style={styles.description}>{marker.shortdesc}</Text>
             <Text style={styles.description}> </Text>
             {/* RATING STARS */}
             <View style={styles.ratingContainer}>
@@ -57,7 +57,7 @@ const HistoryObject = () => {
                 <StarRating
                   disabled={false}
                   maxStars={5}
-                  rating={4}
+                  rating={marker.rating}
                   starSize={32}
                   fullStarColor="#971EFD"
                 />
