@@ -40,14 +40,13 @@ const HistoryObject4 = () => {
           <View style={styles.gridContainer}>
             <Text style={styles.title}>Lodewijk Pincoffs</Text>
             <Text style={styles.description}>
-              DescriptionDescriptionDescriptionDescriptionDescription
+              "Lodewijk Pincoffs" in Rotterdam, een standbeeld ter ere van de
+              ondernemer, belicht zijn rol in de havenontwikkeling. Een
+              blijvende herinnering aan zijn bijdrage aan de groei en welvaart
+              van de stad.{" "}
             </Text>
-            <Text style={styles.description}>
-              DescriptionDescriptionDescriptionDescription
-            </Text>
-            <Text style={styles.description}>
-              DescriptionDescriptionDescriptionDescriptionDescription
-            </Text>
+            <Text style={styles.description}></Text>
+            <Text style={styles.description}></Text>
             {/* RATING STARS */}
             <View style={styles.ratingContainer}>
               <Text style={styles.rating}>

@@ -42,14 +42,12 @@ const HistoryObject2 = () => {
           <View style={styles.gridContainer}>
             <Text style={styles.title}>De Verwoeste Stad</Text>
             <Text style={styles.description}>
-              DescriptionDescriptionDescriptionDescriptionDescription
+              Het standbeeld "De Verwoeste Stad" in Rotterdam symboliseert de
+              wederopbouw na de Tweede Wereldoorlog. Het beeld toont een
+              gebroken stad met een hoopvolle opkomende figuur.
             </Text>
-            <Text style={styles.description}>
-              DescriptionDescriptionDescriptionDescription
-            </Text>
-            <Text style={styles.description}>
-              DescriptionDescriptionDescriptionDescriptionDescription
-            </Text>
+            <Text style={styles.description}></Text>
+            <Text style={styles.description}></Text>
             {/* RATING STARS */}
             <View style={styles.ratingContainer}>
               <Text style={styles.rating}>

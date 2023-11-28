@@ -39,14 +39,11 @@ const HistoryObject3 = () => {
           <View style={styles.gridContainer}>
             <Text style={styles.title}>Het Afscheid</Text>
             <Text style={styles.description}>
-              DescriptionDescriptionDescriptionDescriptionDescription
+              "Het Afscheid" in Rotterdam, een beeld van een vrouw en een kind
+              die elkaar loslaten, belichaamt de emoties van afscheid nemen.{" "}
             </Text>
-            <Text style={styles.description}>
-              DescriptionDescriptionDescriptionDescription
-            </Text>
-            <Text style={styles.description}>
-              DescriptionDescriptionDescriptionDescriptionDescription
-            </Text>
+            <Text style={styles.description}></Text>
+            <Text style={styles.description}></Text>
             {/* RATING STARS */}
             <View style={styles.ratingContainer}>
               <Text style={styles.rating}>
