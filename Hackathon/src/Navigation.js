@@ -12,6 +12,8 @@ import User from "./Screens/User";
 import HistoryObject from "./Screens/HistoryObject";
 import HistoryInfo from "./Screens/HistoryInfo";
 
+import { supabase } from "../Components/Supabase";
+
 const NavTheme = {
   dark: false,
   colors: {
@@ -49,6 +51,7 @@ const Navigation = () => {
               ),
             }}
           />
+
           <Tab.Screen
             name="History"
             component={History}
@@ -105,7 +108,6 @@ const Navigation = () => {
               ),
             }}
           />
-
           <Tab.Screen
             name="HistoryInfo"
             component={HistoryInfo}
@@ -113,7 +115,6 @@ const Navigation = () => {
               tabBarButton: () => null,
             }}
           />
-
           <Tab.Screen
             name="HistoryObject"
             component={HistoryObject}

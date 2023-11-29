@@ -1,7 +1,6 @@
 import { Text, View, StyleSheet, Image } from "react-native";
 import { useFonts } from "expo-font";
 import Icon from "react-native-vector-icons/Feather";
-
 export function HeaderUser() {
   const [fontsLoaded] = useFonts({
     SuperMario: require("../assets/fonts/SuperMario.ttf"),
@@ -38,7 +37,7 @@ export function HeaderUser() {
         </View>
         <View style={styles.iconContainer}>
           <Icon name="search" size={20} color="white" style={styles.icon} />
-          <Icon name="settings" size={20} color="white" style={styles.icon} />
+          <Icon name="log-out" size={20} color="white" style={styles.icon} />
         </View>
       </View>
     </View>

@@ -20,7 +20,7 @@ const HistoryInfo = ({ route }) => {
           <Text style={styles.titleText}>{marker.name}</Text>
         </View>
         <View style={styles.infoContainer}>
-          <Text style={styles.infoText}>{marker.shortdesc}</Text>
+          <Text style={styles.infoText}>{marker.description}</Text>
         </View>
       </ScrollView>
     </>
