@@ -1,9 +1,8 @@
 import { Text, View, StyleSheet, Image } from "react-native";
 import { useFonts } from "expo-font";
-import Icon from "react-native-vector-icons/Feather";
 import { useNavigation } from "@react-navigation/native";
 
-export function HeaderHistoryInfo({ picture, title, description }) {
+export function HeaderHistoryObject({ picture, title, description }) {
   const navigation = useNavigation();
 
   const [fontsLoaded] = useFonts({
@@ -12,7 +11,6 @@ export function HeaderHistoryInfo({ picture, title, description }) {
   if (!fontsLoaded) {
     return null;
   }
-
   return (
     <View style={styles.Header}>
       <View

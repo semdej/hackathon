@@ -28,11 +28,11 @@ export function HeaderUser() {
                 marginTop: 10,
               }}
             >
-              Luuk Vink
+              Mark
             </Text>
           </View>
           <View style={{ flex: 1 }}>
-            <Text style={{ marginLeft: 20, color: "#b5b5b5" }}>Luuk</Text>
+            <Text style={{ marginLeft: 20, color: "#b5b5b5" }}>Profile</Text>
           </View>
         </View>
         <View style={styles.iconContainer}>

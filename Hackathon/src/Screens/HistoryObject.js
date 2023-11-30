@@ -1,6 +1,6 @@
 import { WebView } from "react-native-webview";
 import React from "react";
-import { HeaderHistoryInfo } from "../../Components/HeaderHistoryInfo";
+import { HeaderHistoryObject } from "../../Components/HeaderHistoryObject";
 import {
   View,
   Text,
@@ -29,7 +29,7 @@ const HistoryObject = ({ route }) => {
 
   return (
     <>
-      <HeaderHistoryInfo
+      <HeaderHistoryObject
         picture={marker.picture}
         title={marker.name}
         description="Statue"
@@ -67,7 +67,7 @@ const HistoryObject = ({ route }) => {
                 onPress={handlePress}
                 style={styles.leesMeerContainer}
               >
-                <Text style={styles.leesMeerText}>Lees meer</Text>
+                <Text style={styles.leesMeerText}>Read More</Text>
                 <Icon name="arrow-right" size={20} color="white" />
               </TouchableOpacity>
             </View>

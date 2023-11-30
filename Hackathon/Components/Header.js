@@ -51,6 +51,7 @@ export function Header() {
               fontSize: 30,
               paddingLeft: 5,
               fontFamily: "SuperMario",
+              paddingRight: 10,
             }}
           >
             {" "}

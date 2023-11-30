@@ -10,10 +10,10 @@ const User = () => {
         <View>
           <Image
             style={styles.profilepic}
-            source={require("../../assets/profilepic.png")}
+            source={require("../../assets/mark.jpeg")}
           />
-          <Text style={styles.name}>Luuk Vink</Text>
-          <Text style={styles.bio}>Bio</Text>
+          <Text style={styles.name}>Mark</Text>
+          <Text style={styles.bio}>CEO of Meta</Text>
         </View>
         <View style={styles.row}>
           <Text style={styles.statstitle}>Owned History</Text>
@@ -62,6 +62,7 @@ const styles = StyleSheet.create({
     width: 150,
     height: 150,
     borderRadius: 100,
+
     alignSelf: "center",
   },
   name: {
